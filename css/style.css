@@ -1356,3 +1356,22 @@ figcaption {
   color: #666;
   margin-top: 6px;
 }
+body.home {
+  background-image: url("/blog/img/bg-main.jpg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+body.home #main {
+  background: rgba(255,255,255,0.86) !important;
+  border-radius: 8px !important;
+  padding: 24px !important;
+}
+body.post {
+  background: #eee !important;
+}
+body.post #main {
+  background: transparent !important;
+  padding: initial !important;
+}
