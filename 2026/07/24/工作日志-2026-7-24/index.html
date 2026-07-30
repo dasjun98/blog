@@ -39,10 +39,54 @@
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 <style>
+/* 全局强制隐藏左上角移动端导航 */
 #mobile-nav {
     display: none !important;
 }
 </style>
+
+<script>
+// 判断当前页面是首页，才加载背景样式
+if (location.pathname === "/blog/" || location.pathname === "/blog/index.html") {
+  const style = document.createElement('style');
+  style.textContent = `
+html,body{
+  background-color:unset !important;
+}
+body {
+  background-image: url("img/bg-main.jpg") !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+#wrap {
+  background: transparent !important;
+}
+#header #banner {
+  background: transparent !important;
+}
+#main {
+  background: rgba(255,255,255,0.86) !important;
+  border-radius:8px !important;
+}
+#sidebar .widget-title {
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+#sidebar .widget a {
+  color: #000 !important;
+  text-shadow: none !important;
+}
+#sidebar .widget a:hover {
+  color: #0066cc !important;
+  text-shadow: none !important;
+}
+  `;
+  document.head.appendChild(style);
+}
+</script>
+
 <body>
   <div id="container">
     <div id="wrap">
@@ -81,10 +125,6 @@
     </div>
   </div>
 </header>
-
-<style>
-
-</style>
       <div class="outer">
         <section id="main"><article id="post-工作日志-2026-7-24" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -112,12 +152,12 @@
      data-hbe-format="4"
      data-wpm="Oh, this is an invalid password. Check and try again, please."
      data-whm="Oh, this is an invalid password. Check and try again, please."
-     data-salt="52e1116b883e0b5e11aa190f744f311a944e07a1d8029f72b6f4e32d0e13490e"
-     data-nonce="07084eadfc891cfadd069323"
+     data-salt="ee1731010fa7f84fc080c0bb3dfc9c1c79ae804fc55a0821cafcd7f9c9f5749c"
+     data-nonce="5f28e5262277637ab108b5c5"
      data-kdf-iterations="250000"
      data-auto-save="true">
   <script id="hbeData" type="hbeData">
-    3af5d9770ed33f0e7a2013fd535098f4898c31b5037e521bf05d0a6b912bd95902ccd6e81cc97ca6f505689f08c3ed7fe64de6f8ba249c85fb8fc38c0f6257f4f994356d3360cc5d9aa8f642f9df213bc3823e485a8d67bef6e6062ecd6ff5c4ee80ece48c87ed7c25ede4e278d5d430736b9facefb978bccd58a3042cef85ecdc8bfddface2ac5e2c767e51504323a2cc7e3d78e0bed5a36f0a66f2a4af1f9626dcf22e0c9c4b3e75490a2958e71e3289e275e2400f7553aa86337e8018d00db6a15888b3ace6e33e06e9f29a96281b4ab5fcf2cebe4eed1fac00117543a0d4976027a9cb4b60d8a970e6d744dab08ffcbaaecc7b7714d2250a00675ed767ce0c822266c63932ff606e54d8ec8d250c2465b1405756b646e1dd1c49b4b972067e7bdba2b389d1a5419030cbb24326d9124787924a38f9bdeecf14067938d1b40aa2ae1d86936b9687820aff57261309af18b997b949bc9489301272496801d87a6c4355bbc5a559166ef751ad8efe434c7321e1e5f6c33319229ce5f5f675e1a08f643d4963ac96a740ee1a75426cebcf746b36124bccff05f7f1573ab0d8fcb6707180a55edbd14172e156aba246a6fd945f44d9653a1ba6a6aab64a6ebf34c5bdef7d56514a4a24169bb1424e0bbbc72b5732d3ae207bd3fd5b898cf8cee5193e115b31e057d03954d4233fce21c7271455230faa62052aef6482afd99ab9abef2af562095e9e8ada8eb312ec88610782fccb59aed3b038e17cd25a916545209abcca7c826817ecb0a2e7cbd0535145f4249d8d52bb9a0b87ad8a4ba5c271243b5c233e77f5f314fcab38ffe7ad2090dc82e8a36803e1fe1eb0d4f4a6a969a83ad71dd5849c90726b4b70ca35ce39613c685ece4339bf47dc87e581daa4f811871006dcfd9863c1454ac77edda1272bc2ca79da0a2d2529981293c94c738c7fde954c4de2e647247b89f54d2b6a3065cc3cd5038149b357191ebb46b2416282ed7085dd80c13984f4723cb111ed60952f85178f59147960a767847a1d8df3b7d72b200be8e05c93af36b4d7cbdd83e5f5a83a5a69579666683269070fbd68ffcfe0df243e9aecc52ead5c44c22cbe781037bc982ae639e04af48c3bb4f8e91809558f80edd312423271a66fe3172ac548393ae8a0e2a1cd177f1433879369c52cc67d24c98958e15d7af20bb88b75a41972ce1758019342864450cc7547eabed5f7469121e3de14fda8c3c3408d2a5c11c0acbbca1275d85e97fb1f22bc232301b0e5ae2eca469d88b49a4ecf406b781f23435638e1f5f63b9f38053572d7dbb493e52618af96b26eaf9773943997acc239852aedff250dd8f3bbfab10e450027a8e0505cb3b37d8940541a20bc7c3276d3eae12c50840dd4285759ccc12df43174461ed25a5434639ba7a0a982180c7910b95a4b8c12093f14106350ead6cb4b4aa0cf2cf26759203f806cd80c3b3373a95c042f59e7902534586fb7bedbe97ca1bbb7551984b7b29177a8bc2c354ad62caa6c8a9ab7d6881a646e40383253cc6758e2829c235b601dff57a81f837758ba95f4a03fbf72b2cb233644671312776a7e1505064df360b941dbad1e7a7dbeaa896ea50731c5c657fc5f71a80adedff824d32d546ab9b3919285863757b3845d61703454e04c7b40f760fe82fd76aa3bdad9ba27171a833a6b4ad2661985133f8e5df1f961dc291ab01232be36a6689f
+    93a9c029bbe9893f0f72b827dc01189234368a82a7227e0d13ee4965d8adb87914bd3129a7383a92e4cec1c8c4821ae3c2004adf2c9484425528af22487a23a7f3a0b9a4d5797d4e5afea165e3d17549d57bc7b93b6c3cc2760647f3db84f1365ce7918364b6cd0ab13f4707cc64b90cd3588fc6199ab5d6162ce1ba1a38f90f4a51d7f6892d45f43003dd544f416afdd0c9b7fd0e428f768b27afcdd7fc5a568f8a944f8daa19becdf90692dc9ab7ee4fd536c77f3fcc092f2d7513bf7a2f2a2bddc1dea6ea8f4c061c9826eee5fd1342b8a5e5ae40c6c0b3823cfd4abf3bdfbc6b849ba9edcff9a4c2a8187544cb8919d54b4ce381b8122928295c6dc24ff2541565b04cd7cefb28539b3f4834240859e86d6ee4433abf52eb8e8e2f401302072fb9b34aecdfff345184c8bb1d2ae5ebfd31a7d03c54307f3f502562586251bbada5e0f611deefa0a6aaa6aa8d9f2804a60396db23b9469b0c2d5326e0a37618b8c690903048ade5ccffc5e3233d8dae203fb4fd4ecfef582012edc0e513d0fc9445c75a7218e87836ce6bc50baae10547d328f7ad372bb856e102727ab7068e1aaee6225f99d218df1697078e55fc8b8c9256bc4e0312a60c97d38f91098317424f02ba84bad6afb5f8dabfe942e2a80c466e86ffed1b1bc320d6d0abcd9e69a200150754c83d408c0955773c09e907814cd62ffa4240af17e16bf4c0a3d3817c71fbd0153ea203b671f6dc55241f4a2bed7ed27310ccdcaab7a88cb91ae0c95aa981205b93fc3d5f3f22c9e0f9934d08b71e628666edc94195bf9a5ff70f6bbbf0fe0b184191e2f70edb87e913f67c184f30a80ef9761953366d3e10e5b135d8f6458542db218b3c6dc159231eb58505c413b409653af9b4ef2f67da1027e4fce2d206ced90b04cf6e1084b7d1650a270f060fc4c66276b8b154f18a7292cc80173c086d7f04fcc946f19b810c775ee1ae147dc36bda1dd3640c9e1543b419fe7a3f5e08d892199b09f944eaccdde4070dd853acf78e6529e182c05a1f598ceacf34d5b34bb45a00c2a55c3277afc56b166effb22c2db8f1b1526fa722dc96b9eb5845ee62845ba0e8b9600a54a2beab51f1884da2a605b7f190dc5e3350a0dacbcefaa217fc2829cb559e2d993d58252e989d62a400013d42c79c68e6b5393749f9d9954660856f60ce3731a4496585c70b38d0b1b7bccad3d40843ff8817fcd778444f5085d751b4704b883b50d7fcbae16da65b37ea18934177b32d041179584696340053785dbb877bced404e257db3be499b4a4ec6a99d97ce42c469edd7bd494911ba0e513fbeb0cb2718651c766a71c0682145a14ae916cb170208d5d393b89963d5d3b5ab02585085ab051533278b1ea578636ac178931daa6dbda5940dac06cdb09684782e911fb5166f2a93edf7a90779105e9132dd2566173752ee4d03f605cbb198bf8ba337cb27e6ba5d630ac2bf85c7f89d4820217ced529cd9a7bb0f731f7b81336af2c8c9de7b5ed713c2b5ce044db6ae4d754a26466e566e2398ca25a851d91fe112862a89f7bbcde38692c9d2eb71c8e76166a54b8cebb2cccf71ec355a14ad42a191d13e8e64bdb76c11ed4ce49b3eeb28b018a26bd323a4f1fc9740e162a9f4c6ff270ca7080c787aa5190cc501cae8f40e2276083833c98c7048fec135067882d53e64772d9c7ebde13dc1a8d905ab5e50aa59fff6301
   </script>
   <div class="hbe hbe-content">
     <form id="hbeForm" class="hbe hbe-form" onsubmit="return false">
@@ -136,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dasjun98.github.io/blog/2026/07/24/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97-2026-7-24/" data-id="cms6wlj1z00007or5f6gq9les" data-title="工作日志 2026.7.24" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://dasjun98.github.io/blog/2026/07/24/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97-2026-7-24/" data-id="cms6x4l060000j8r5b5e10vwc" data-title="工作日志 2026.7.24" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       

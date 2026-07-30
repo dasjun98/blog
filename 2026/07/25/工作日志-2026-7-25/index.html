@@ -39,10 +39,54 @@
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 <style>
+/* 全局强制隐藏左上角移动端导航 */
 #mobile-nav {
     display: none !important;
 }
 </style>
+
+<script>
+// 判断当前页面是首页，才加载背景样式
+if (location.pathname === "/blog/" || location.pathname === "/blog/index.html") {
+  const style = document.createElement('style');
+  style.textContent = `
+html,body{
+  background-color:unset !important;
+}
+body {
+  background-image: url("img/bg-main.jpg") !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+#wrap {
+  background: transparent !important;
+}
+#header #banner {
+  background: transparent !important;
+}
+#main {
+  background: rgba(255,255,255,0.86) !important;
+  border-radius:8px !important;
+}
+#sidebar .widget-title {
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+#sidebar .widget a {
+  color: #000 !important;
+  text-shadow: none !important;
+}
+#sidebar .widget a:hover {
+  color: #0066cc !important;
+  text-shadow: none !important;
+}
+  `;
+  document.head.appendChild(style);
+}
+</script>
+
 <body>
   <div id="container">
     <div id="wrap">
@@ -81,10 +125,6 @@
     </div>
   </div>
 </header>
-
-<style>
-
-</style>
       <div class="outer">
         <section id="main"><article id="post-工作日志-2026-7-25" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -112,12 +152,12 @@
      data-hbe-format="4"
      data-wpm="Oh, this is an invalid password. Check and try again, please."
      data-whm="Oh, this is an invalid password. Check and try again, please."
-     data-salt="a4d7e9018b095c2379475964cb4ad1f341dc3e36fae4d3c08367087dcb092bb2"
-     data-nonce="38c85d286b3471e216b4c69f"
+     data-salt="9a61deda11fa3857b0b15e9d34e25e5f306e19c36fb827c5360ecd866ef4364e"
+     data-nonce="a3ae6c14e50c14f6edd88b32"
      data-kdf-iterations="250000"
      data-auto-save="true">
   <script id="hbeData" type="hbeData">
-    f544c4557793f816ff7822ca05af20945feb0a0f16fbf17c9f478d59b40b7b85c31a4867f12f1a37e4c91fbc6b35e4263f5dd597ca96458af6eccb39d83fd9ec7895d8b68e6a52bfa02ed6b9f2dc32969df8c6e9545610a26a5c035af5200b40fcdc5d4cf4150b795bad689a4da5e233a37d934fc737a5a4abea4c722a759f016d7c4823a9d6165ff6f2bbd1e3a3caa400ff44f7e6505168ed8e3115f0060707dc32d24c803adf969a7ab3fdd67d659fe664a08c8c8335c09e8ebe7439ad8dc1089bb6f084a6ead89e9c230669296bd47de7d2bf9dc4147da42c546cadf848f36117a60ba9601b29d5b2c2be56c34399e11af03d07702ced43a2c471007b21b20540d9e8842938a9045c0f55390e4cfb246db8741126c9287ea92884f7155f219e3bd830b166de3a327b2b7a86f39f85d453f641cdda5eccccd90f2f6e0c1af428ec654ee077b3e714c0dcb3be5d12d7727764b1b0bd8531ddde17dd86b8d3999590179e135dd9f61a5f
+    9c32aa4b7607b8040f516eb08364eef3a99cec501a7efdf7c1eb8a5db99c82f1e0a8953461f06d8b88648498c052bd4d66b9414b773fbb520473a83788103da4b73daae9e937834f0f5a864e70262d46a04142bcb870e7fd39d50a50e3de4bb7d30c9595c2a5e492e6ea18101c0c1c66828139a83ac1dc1b31ce38996841133fa531d66deaa7420b4998792fece15e6f6d9de6b7da64ce79dd90f1dc38af0856230f282cf525ebd85ab1a467a98dfbedc19a444fb4db0eba26e9040693bffb6668e2f1698874b9972e82f88e87a86c90c013dc13e82bd07434946c231a48a1b10bdeebb4d382471d282c84251071e9859cc8f09e2786cc428e6a0bc44090e83c9e8be9d6659186cd5bb1921ce17594931ce0ff4ddc9df7f4cb997f6f48a6120af4fc58b036b2c7896c764ca4a9da7c647ff9233f2a4fa90f99d385c8347090b9fe487e83ca27f543ebcbb6604ed91a194637068568305424fe2c35be483879361e70036883f4e55b47f8
   </script>
   <div class="hbe hbe-content">
     <form id="hbeForm" class="hbe hbe-form" onsubmit="return false">
@@ -136,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dasjun98.github.io/blog/2026/07/25/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97-2026-7-25/" data-id="cms6wlj2b00037or5735edqce" data-title="工作日志 2026.7.25" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://dasjun98.github.io/blog/2026/07/25/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97-2026-7-25/" data-id="cms6x4l0m0009j8r52p784jky" data-title="工作日志 2026.7.25" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       

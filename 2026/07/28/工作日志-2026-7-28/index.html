@@ -39,10 +39,54 @@
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 <style>
+/* 全局强制隐藏左上角移动端导航 */
 #mobile-nav {
     display: none !important;
 }
 </style>
+
+<script>
+// 判断当前页面是首页，才加载背景样式
+if (location.pathname === "/blog/" || location.pathname === "/blog/index.html") {
+  const style = document.createElement('style');
+  style.textContent = `
+html,body{
+  background-color:unset !important;
+}
+body {
+  background-image: url("img/bg-main.jpg") !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+#wrap {
+  background: transparent !important;
+}
+#header #banner {
+  background: transparent !important;
+}
+#main {
+  background: rgba(255,255,255,0.86) !important;
+  border-radius:8px !important;
+}
+#sidebar .widget-title {
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+#sidebar .widget a {
+  color: #000 !important;
+  text-shadow: none !important;
+}
+#sidebar .widget a:hover {
+  color: #0066cc !important;
+  text-shadow: none !important;
+}
+  `;
+  document.head.appendChild(style);
+}
+</script>
+
 <body>
   <div id="container">
     <div id="wrap">
@@ -81,10 +125,6 @@
     </div>
   </div>
 </header>
-
-<style>
-
-</style>
       <div class="outer">
         <section id="main"><article id="post-工作日志-2026-7-28" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -112,12 +152,12 @@
      data-hbe-format="4"
      data-wpm="Oh, this is an invalid password. Check and try again, please."
      data-whm="Oh, this is an invalid password. Check and try again, please."
-     data-salt="4a212c60f83d5f5d97f4f5ec313796718c2149285f881221f7b8bfc1e4a10a3c"
-     data-nonce="2c78f363d5172ef12ad2a99a"
+     data-salt="3486cfa32b199afe4e8a14769d6649290e840f1e3b627035daaea83b8100cbdc"
+     data-nonce="29ee9cf8df48626155bd598a"
      data-kdf-iterations="250000"
      data-auto-save="true">
   <script id="hbeData" type="hbeData">
-    ce78def7b5f6946db72ea1510ff8924f70f9031b2668eb598d73a409a007f5a78c884fa365dddb7129b99473fa3e41c84703dbc0baf834376ab2ab43370f61312782798d2fced9e3804c14bf9798482c849b0b2fb08499328d4c7dc234c64d1a83a0b725b01f9247f367f03026706ef0c20f6f89c44cd215fc890ce9c203dca61477290b2aeba1e210001ab056b5feb2b4c6f616a493a7e2ce4ea5cfb619beb51a29c19a1cf0c7e53bd0016e36d9063658d604a8d992e52649277b724652ccc76b94a5f49900f4ac26996eea12a24a71fe65d3cc34765af4f91cd755e67ef2d22660f9768f7f3ccf3a1076269dda946ae875f004e0b2e00bf5dc52f5fc0ede9ce1e0beb2e75a6d7bc8bf9a1b940690f9f5d85231f92fd0d9b5f19188c2a0c54bd7a4b8e60a8dd10b2b4d73d5cddc9d34cdec5cf50502c8217415d503c1971f46b0b2ca71d8279bda0553960b119f098f5953ab453f9be1dd432a2cbdfd68825f2974dfc7e2827e9930ea0eb30ec276f4c0f174af21297db947ec71d9f4e2a5b5a7e9bbc7f0dcd50e833df4c99aa2296b512b96b5a86271568bdaaa690ce86539ec55ae50b3a819e9c24f5d1ace864260148db05d817b498efce92ec98641b6d5d60aa63a9d9872699af78e1fd3b383da9524885c1c3211c71ad7f762c75a9a5808318cf4a3b832c241a8328e74a82b71b97e270b77bffcb67ea0413bd70109446022b82e6cb924ff034540215ec80b5f0e86eb77e1540f5849b1a4e986f9282dcabcaf0adcbdb8ef1792b1971ff2179dbb8b73e12dcf127f1c0e04f06580ef2bac48dd8823d9a48c889e3202fe8df549eae01b4937e144df89ebd3e9334ba8071d987bc090fac8d6d79eb54b4d7a9fc5f075d1e97544ed5969863539178feaab73b65acd327bd720ea00883da536f41a2eb64d8f9866100a9239fdfcda4c38847a2cff938a39f368d5530c2c6f40e01c5ca21f040e7d91fbcba0155ac408d1b1959833d9c8668eb916d82155ec23a31b53e084b46210f195593799e73ccec43c698602277b4fc0c36eb2fce2937b5e3226a5454551e541ecf06d8b4f349e899963d0fb5c140b337194c5722cbc95e701f8e8572dda5f669513c66349ed202ae2c88a0b5a88d58b415ce7509c8029424947911db41536d2548443f7672b3ef407d17a90a7edcab20767f6eaa2a660eae779b5
+    2a33021d908009e67d014526d9c40df26cf1b522b96e45ef3d4695f0657920470b221321b9b46edc175ea9eef91f9efce119f66d8441b7e37483046f9d039ed84d71b43aa6be1078ef6048df7ee62c54da6c69e6a0ba896069d25838d00905306dd852f211f0c4c69e2838ca49b1a63b7b8b9c42a95f22a066c26c738b08467ca1aa17f6b3894ccc4fe4d3376e9f8ed4ce89f9af63f9a15761aa1e13400b1ff833959dfddab99b1a74826682a4a4f9b5b4706bd211854e127d8eb4246e276823f0e4abe0bf293fcfbba50532e885dd9ceb5cd60acf6051b4b11d235333f17493f0f4a42d370e586875667996fc7d4fbe87d578cb8e854aff8f35db5ac389440a228c7646db02dd2a90f304847aceedaf6a0e25ed62e1f28f39038c36287bcb5450cfebfaaade73ac2a83b6a384a96f4cc2a3b17868ae1c23db28ac7394c1eb32141d58c7e7890629d36ebc10b8718083cb5ada19f78b3afad0cea0dd576781d6afc2d943cd94300e67d820b43ee7b61c510488b9e4c199b49e7766424dc709022ffa40c1164e5a5fa8c151030e4148a3a9c4023ea35b4c149596ca4bf39b1c431896783bf4030bb0d16d41f7218e4cfad5b9da5a42d38aa4d8f0e44635e8d04da63c7ce23139aa7384c8d7aa3a53cd0420a15986b668d6a596f963c0d4bbb494aadf04bfcc94838b0795477606a6c5d0680d6503972cbbbde032c447b467663c34fb63528ab286163f54f7a774ba6de676b1e8ff21405e95c39f795c04b70c0b90241f44256954a310b992be99b213cac6e261765df8e87f91870e2fcce9114526691a5aa86eca27cf589e71367e0cc5abd3091b2ffd000aaa6817d7e05ac32b23d773384333c4b1001c05e7af44e42dee0f69b5c52292df82058f04ddca2e735023c7451053ff83356b8e3da15d85320314a201a5e64508e4876a1876a9e67c5ccb91a711b424b9bcd8071c2426e52cc9ed5390300118b2d6a3067fb21f2d63854d09977351ffd3718ced35a1340d6656f717eed818839bf7addec5d0f4c6f566ecff06201b5f5dbc7026b0ecddfa3fe61358d72067478c7f11eb314a0409f1f854ed99af6160a885bb60127cf83a573b8d78ce3aa205b1e721c223237fe863bfad122a1dc46f7cf44d748a4a3dc5d3d48c8002c51f7614fe0f214df0d80a95b3eb2b16c3c5483ff2354678a04284fdbe63
   </script>
   <div class="hbe hbe-content">
     <form id="hbeForm" class="hbe hbe-form" onsubmit="return false">
@@ -136,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dasjun98.github.io/blog/2026/07/28/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97-2026-7-28/" data-id="cms6wlj2d00067or5emki5ujt" data-title="工作日志-2026-7-28" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://dasjun98.github.io/blog/2026/07/28/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97-2026-7-28/" data-id="cms6x4l0i0003j8r5061aeqtw" data-title="工作日志-2026-7-28" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       

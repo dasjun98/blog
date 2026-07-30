@@ -36,10 +36,54 @@
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 <style>
+/* 全局强制隐藏左上角移动端导航 */
 #mobile-nav {
     display: none !important;
 }
 </style>
+
+<script>
+// 判断当前页面是首页，才加载背景样式
+if (location.pathname === "/blog/" || location.pathname === "/blog/index.html") {
+  const style = document.createElement('style');
+  style.textContent = `
+html,body{
+  background-color:unset !important;
+}
+body {
+  background-image: url("img/bg-main.jpg") !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+#wrap {
+  background: transparent !important;
+}
+#header #banner {
+  background: transparent !important;
+}
+#main {
+  background: rgba(255,255,255,0.86) !important;
+  border-radius:8px !important;
+}
+#sidebar .widget-title {
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+#sidebar .widget a {
+  color: #000 !important;
+  text-shadow: none !important;
+}
+#sidebar .widget a:hover {
+  color: #0066cc !important;
+  text-shadow: none !important;
+}
+  `;
+  document.head.appendChild(style);
+}
+</script>
+
 <body>
   <div id="container">
     <div id="wrap">
@@ -78,10 +122,6 @@
     </div>
   </div>
 </header>
-
-<style>
-
-</style>
       <div class="outer">
         <section id="main">
   

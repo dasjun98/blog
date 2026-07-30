@@ -39,10 +39,54 @@
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 <style>
+/* 全局强制隐藏左上角移动端导航 */
 #mobile-nav {
     display: none !important;
 }
 </style>
+
+<script>
+// 判断当前页面是首页，才加载背景样式
+if (location.pathname === "/blog/" || location.pathname === "/blog/index.html") {
+  const style = document.createElement('style');
+  style.textContent = `
+html,body{
+  background-color:unset !important;
+}
+body {
+  background-image: url("img/bg-main.jpg") !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+#wrap {
+  background: transparent !important;
+}
+#header #banner {
+  background: transparent !important;
+}
+#main {
+  background: rgba(255,255,255,0.86) !important;
+  border-radius:8px !important;
+}
+#sidebar .widget-title {
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+#sidebar .widget a {
+  color: #000 !important;
+  text-shadow: none !important;
+}
+#sidebar .widget a:hover {
+  color: #0066cc !important;
+  text-shadow: none !important;
+}
+  `;
+  document.head.appendChild(style);
+}
+</script>
+
 <body>
   <div id="container">
     <div id="wrap">
@@ -81,10 +125,6 @@
     </div>
   </div>
 </header>
-
-<style>
-
-</style>
       <div class="outer">
         <section id="main"><article id="post-blog配置-2026-7-29" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -117,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dasjun98.github.io/blog/2026/07/29/blog%E9%85%8D%E7%BD%AE-2026-7-29/" data-id="cms6wlj2c00047or52ki8ce5y" data-title="blog配置 2026.7.29" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://dasjun98.github.io/blog/2026/07/29/blog%E9%85%8D%E7%BD%AE-2026-7-29/" data-id="cms6x4l0c0001j8r58dy00b8f" data-title="blog配置 2026.7.29" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
