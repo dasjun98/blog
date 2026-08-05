@@ -29,10 +29,6 @@
 <link rel="stylesheet" href="/blog/css/style.css">
 
   
-    
-<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
-
-  
   
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
 
@@ -157,7 +153,7 @@ body {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dasjun98.github.io/blog/2026/07/29/blog%E9%85%8D%E7%BD%AE-2026-7-29/" data-id="cmsd0sar1000404r54nuneq6z" data-title="blog配置 2026.7.29" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://dasjun98.github.io/blog/2026/07/29/blog%E9%85%8D%E7%BD%AE-2026-7-29/" data-id="cmsfy6p8r000518r5gv6sa2it" data-title="blog配置 2026.7.29" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -233,6 +229,14 @@ body {
       <ul>
         
           <li>
+            <a href="/blog/2026/08/05/blog%E5%BB%BA%E8%AE%BE-2026-8-5/">blog建设 2026.8.5</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2026/08/05/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97-2026-8-5/">工作日志 2026.8.5</a>
+          </li>
+        
+          <li>
             <a href="/blog/2026/08/03/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97-2026-8-3/">工作日志 2026.8.3</a>
           </li>
         
@@ -242,14 +246,6 @@ body {
         
           <li>
             <a href="/blog/2026/07/31/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97-2026-7-31/">工作日志 2026.7.31</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2026/07/31/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97-2026-7-30/">工作日志 2026.7.30</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2026/07/30/blog%E5%BB%BA%E8%AE%BE-2026-7-30/">blog建设 2026.7.30</a>
           </li>
         
       </ul>
@@ -286,10 +282,6 @@ body {
 
 
 
-  
-<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
-
-
 
 
 <script src="/blog/js/script.js"></script>
@@ -298,6 +290,94 @@ body {
 
 
 
+
+<script>
+// 禁用landscape主题script.js自带的原生图片预览，解决双重弹窗冲突
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.img-wrap img').forEach(img=>{
+    img.onclick = null;
+  });
+});
+</script>
+
+<style>
+.img-wrap{
+  margin:16px auto;
+  text-align:center;
+}
+.img-wrap img{
+  max-width:40%;
+  border-radius:4px;
+  cursor:zoom-in;
+  transition:0.2s;
+}
+.img-wrap img:hover{
+  opacity:0.9;
+}
+.img-wrap figcaption{
+  font-size:14px;
+  color:#666;
+  margin-top:6px;
+  text-align:center;
+  display:block;
+}
+.image-modal{
+  display:none;
+  position:fixed;
+  top:0;left:0;right:0;bottom:0;
+  background:rgba(0,0,0,0.85);
+  z-index:99999;
+  padding:20px;
+  align-items:center;
+  justify-content:center;
+}
+.image-modal.show{
+  display:flex;
+}
+.image-modal img{
+  max-width:95%;
+  max-height:95vh;
+  object-fit:contain;
+}
+</style>
+
+<script>
+(function(){
+  const modal = document.createElement('div');
+  modal.className = 'image-modal';
+  modal.innerHTML = `<img id="modal-img">`;
+  document.body.appendChild(modal);
+  const modalImg = modal.querySelector('#modal-img');
+
+  document.querySelectorAll('img[data-fancybox]').forEach(img=>{
+    img.removeAttribute("data-fancybox");
+  });
+
+  document.addEventListener('click',function(e){
+    if(e.target.matches('.img-wrap img')){
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      modalImg.src = e.target.src;
+      modal.classList.add('show');
+    }
+  });
+
+  document.addEventListener('click',function(e){
+    if(!modal.classList.contains('show')) return;
+    if(e.target === modal){
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      modal.classList.remove('show');
+    }
+  });
+
+  document.addEventListener('keydown',function(e){
+    if(e.key === 'Escape' && modal.classList.contains('show')){
+      modal.classList.remove('show');
+    }
+  })
+})();
+</script>
   </div>
 </body>
 </html>
